@@ -19,13 +19,11 @@
 require 'pry'
 require_relative 'player'
 require_relative 'war'
-
+require_relative 'roulette'
 
 
 def start_casino
   puts "Welcome to the DEVPoint Labs Casino!"
-
-
 end
 
 
@@ -53,11 +51,9 @@ while @game_input != 4
     starting_amount = gets.chomp.to_i
     @player = Player.new(@player_name, starting_amount)
   when 1
-    load 'roulette.rb'
+    Roulette.new(@player)
   when 2
-    
-    @war = War.new(@player)
-    
+    War.new(@player)
   when 3
     puts @player.printWallet
   when 4

@@ -4,17 +4,17 @@ class War
 attr_accessor :player
 
 def initialize(player)
-  puts "Welcome to War - Lets Play!\n"
   @player = player
-  deal
+  puts "Welcome #{@player.name} to War - Lets Play!\n"
+  user_choice
 end
 
  def war_menu
    puts "\nSelect one of the following"
    puts "1) Draw Cards"
-   puts "2) Return to main casino"
-   puts "3) quit"
-   puts "4) print wallet"
+   puts "2) Return to casino"
+   puts "3) Quit"
+   puts "4) Print wallet"
    @war_choice = gets.chomp.to_i
  end
 
@@ -37,17 +37,17 @@ end
      end
    end
 
-   def deal
+   def user_choice
     while @war_choice != 2
       @war_choice = war_menu
       case @war_choice
       when 1
         draw
-        deal
+        user_choice
       when 2
-        require_relative 'casino'
+        break # return to main casino
       when 3
-        exit
+        exit # exit program/casino
       when 4
         @player.printWallet
       end
