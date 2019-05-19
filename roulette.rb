@@ -20,7 +20,6 @@ end
     choice = gets.chomp.to_i
   end
 
-    #add name from main to Greeting 
   def user_choice
     choice = roulette_menu
     while choice !=4
@@ -50,7 +49,6 @@ end
           roulette_menu
         end
       
-        
       when 3
         bet_parity
         if @parity_choice == @parity
@@ -70,9 +68,6 @@ end
     end
   end
    
-
- 
-
   def bet_amount
     puts "How much do you want to bet?"
       @money = gets.chomp.to_i
