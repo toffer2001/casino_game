@@ -19,14 +19,6 @@ class Player
     return @wallet
   end
 
-  def getName
-    puts @name
-  end
-
-    def getWallet
-    puts @wallet
-  end
-  
   def printWallet
     printf "\nYour wallet has $#{@wallet}\n"
   end

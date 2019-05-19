@@ -18,6 +18,7 @@
     #Return to Main Menu Option
 require 'pry'
 require_relative 'player'
+require_relative 'war'
 
 
 
@@ -54,9 +55,8 @@ while @game_input != 4
   when 1
     load 'roulette.rb'
   when 2
-    require_relative 'war'
-
-    war(@player)
+    
+    @war = War.new(@player)
     
   when 3
     puts @player.printWallet

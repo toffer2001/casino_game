@@ -1,6 +1,9 @@
 require_relative 'player'
 
-def war(player)
+class War
+attr_accessor :player
+
+def initialize(player)
   puts "Welcome to War - Lets Play!\n"
   @player = player
   deal
@@ -35,8 +38,6 @@ end
    end
 
    def deal
-    
-
     while @war_choice != 2
       @war_choice = war_menu
       case @war_choice
@@ -53,4 +54,4 @@ end
     end
  end
  
-
+end
