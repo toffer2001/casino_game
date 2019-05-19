@@ -19,12 +19,12 @@ class Roulette < Main
       bet_num
       if @num_choice == @num
         puts "Winner!"
-        jason.add_wallet(@money_num)
+        Main.add_wallet(@money_num)
         puts @wallet
         roulette_menu
       else
         puts "LOSER!"
-        jason.deduct_wallet(@money_num)
+        Main.deduct_wallet(@money_num)
         puts @wallet
         roulette_menu
       end
