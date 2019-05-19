@@ -1,4 +1,4 @@
-require_relative 'casino'
+require_relative 'player'
 
 class Roulette < Main
   attr_accessor :wallet
