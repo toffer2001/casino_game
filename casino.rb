@@ -1,15 +1,3 @@
-# menu to interact with
-  #Games to choose from
-  #Set up wallet
-
-#wallet for player
-  #method to increase and decrease 
-
-#roulette
-  # black and red -odd are black
-  # numbers 0-36
-  # odd or even
-
   #War
     #highest card wins
     #set values for J, Q K, A
@@ -21,15 +9,18 @@ require_relative 'player'
 require_relative 'war'
 require_relative 'roulette'
 
-
 def start_casino
   puts "Welcome to the DEVPoint Labs Casino!"
-end
+  puts "Please enter your name"
+    @player_name = gets.chomp
 
+    puts "How much would you like to start from your wallet"
+    starting_amount = gets.chomp.to_i
+    @player = Player.new(@player_name, starting_amount)
+end
 
 def casino_menu
   puts "Select Game"
-  puts "0) Create new customer"
   puts "1) Roulette"
   puts "2) War"
   puts "3) Check wallet balance"
@@ -43,13 +34,6 @@ while @game_input != 4
 @game_input = casino_menu
 
   case @game_input
-  when 0
-    puts "Please enter your name"
-    @player_name = gets.chomp
-
-    puts "How much would you like to start from your wallet"
-    starting_amount = gets.chomp.to_i
-    @player = Player.new(@player_name, starting_amount)
   when 1
     Roulette.new(@player)
   when 2
@@ -63,5 +47,3 @@ while @game_input != 4
     puts "Not a valid entry, try again"
   end
 end
-
-

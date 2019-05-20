@@ -14,7 +14,7 @@ end
    puts "1) Draw Cards"
    puts "2) Return to casino"
    puts "3) Quit"
-   puts "4) Print wallet"
+   puts "4) Display wallet"
    @war_choice = gets.chomp.to_i
  end
 

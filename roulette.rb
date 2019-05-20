@@ -7,7 +7,7 @@ class Roulette
   
   @player = player
   puts "Welcome #{@player.name} to Roulette - Lets Play!\n"
-  roulette_menu
+  user_choice
 end
   
   def roulette_menu
@@ -17,46 +17,36 @@ end
     puts "3) Bet odd or even"
     puts "4) Exit to Main menu"
     puts "5) Exit Casino"
-    choice = gets.chomp.to_i
+    puts "6) Display Wallet"
+    @choice = gets.chomp.to_i
   end
 
   def user_choice
-    choice = roulette_menu
-    while choice !=4
-      
-      case choice
+    while @choice != 4
+      @choice = roulette_menu
+      case @choice
       when 1
         bet_num
         if @num_choice == @num
-          puts "Winner!"
-          @player.add_wallet(@money_num)
-          puts @player.printWallet
-          roulette_menu
+          winning_bet
         else
-          puts "LOSER!"
-          @player.deduct_wallet(@money_num)
-          puts @player.printWallet
-          roulette_menu
+          losing_bet
         end
       
       when 2
         red_black
         if @color_choice == @color
-          puts "Winner!"
-          roulette_menu
+          winning_bet
         else 
-          puts "LOSER!"
-          roulette_menu
+          losing_bet
         end
       
       when 3
         bet_parity
         if @parity_choice == @parity
-          puts "Winner!"
-          roulette_menu
+          winning_bet
         else
-          puts "LOSER!"
-          roulette_menu
+          losing_bet
         end
       
       when 4
@@ -64,6 +54,8 @@ end
       when 5
         puts "You're leaving the Casino! Come back soon!"
         exit
+      when 6
+        @player.printWallet
       end
     end
   end
@@ -108,6 +100,20 @@ end
     end
     puts "You spinned:#{@num} #{@color} #{@parity}"  
   end 
+
+  def winning_bet
+    puts "Congrats, you're a Winner!"
+    @player.add_wallet(@money_num)
+    puts @player.printWallet
+    roulette_menu        
+  end
+
+  def losing_bet
+    puts "Sorry, you lost your bet."
+    @player.deduct_wallet(@money_num)
+    puts @player.printWallet
+    roulette_menu
+  end
 end
 
 
