@@ -19,6 +19,11 @@ class Player
     return @wallet
   end
 
+  def check_if_enough(amount)
+    check = @wallet - amount >= 0 ? true : false
+    
+  end
+
   def printWallet
     printf "\nYour wallet has $#{@wallet}\n"
   end

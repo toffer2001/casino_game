@@ -21,19 +21,19 @@ end
    def draw
      puts "How Much Would You Like to Bet?"
      @war_bet = gets.to_i
-     @player_hand = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 'J', 'Q', 'K'].shuffle.first.to_i
-     @dealer_hand = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 'J', 'Q', 'K'].shuffle.first.to_i
-     puts "Your card is a #{@player_hand}"
-     puts "Dealer's card is #{@dealer_hand}"
-     if @player_hand > @dealer_hand
-       puts "Winner"
-       @player.add_wallet(@war_bet)
-       puts @wallet
 
+     if @player.check_if_enough(@war_bet) # check if enough money so player doesn't go into debt
+      @player_hand = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 'J', 'Q', 'K'].shuffle.first.to_i
+      @dealer_hand = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 'J', 'Q', 'K'].shuffle.first.to_i
+      puts "Your card is a #{@player_hand}"
+      puts "Dealer's card is #{@dealer_hand}"
+      if @player_hand > @dealer_hand
+        winning_bet
+      else
+        losing_bet
+      end
      else
-       puts "LOSER!"
-       @player.deduct_wallet(@war_bet)
-        puts @wallet
+      puts "Sorry, you don't have enough money"
      end
    end
 
@@ -53,5 +53,17 @@ end
       end
     end
  end
+
+   def winning_bet
+    puts "Congrats, you're a Winner!"
+    @player.add_wallet(@war_bet)
+    puts @player.printWallet
+  end
+
+  def losing_bet
+    puts "Sorry, you lost your bet."
+    @player.deduct_wallet(@war_bet)
+    puts @player.printWallet
+  end
  
 end
