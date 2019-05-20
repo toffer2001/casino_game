@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   #War
     #highest card wins
     #set values for J, Q K, A
@@ -5,6 +6,10 @@
     # QUit program option
     #Return to Main Menu Option
 require 'pry'
+=======
+require 'pry'
+require 'colorize'
+>>>>>>> added comment
 require_relative 'player'
 require_relative 'war'
 require_relative 'roulette'

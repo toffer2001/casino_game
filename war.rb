@@ -1,11 +1,19 @@
 require_relative 'player'
+<<<<<<< HEAD
+=======
+require 'colorize'
+>>>>>>> added comment
 
 class War
 attr_accessor :player
 
 def initialize(player)
   @player = player
+<<<<<<< HEAD
   puts "Welcome #{@player.name} to War - Lets Play!\n"
+=======
+  puts "Welcome #{@player.name} to War - Lets Play!\n".colorize(:blue)
+>>>>>>> added comment
   user_choice
 end
 
@@ -66,4 +74,8 @@ end
     puts @player.printWallet
   end
  
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> added comment

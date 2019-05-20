@@ -21,7 +21,11 @@ class Player
 
   def check_if_enough(amount)
     check = @wallet - amount >= 0 ? true : false
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> added comment
   end
 
   def printWallet
