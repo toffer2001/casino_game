@@ -1,4 +1,5 @@
 require_relative 'player'
+require 'artii'
 
 class Roulette
   attr_accessor :player
@@ -6,6 +7,8 @@ class Roulette
   def initialize(player)
   
   @player = player
+  art = Artii::Base.new
+  puts art.asciify('Roulette Time')
   puts "Welcome #{@player.name} to Roulette - Lets Play!\n"
   user_choice
 end

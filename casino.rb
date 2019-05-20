@@ -11,16 +11,16 @@ require_relative 'roulette'
 
 def start_casino
   puts "Welcome to the DEVPoint Labs Casino!"
-  puts "Please enter your name"
+  print "Please enter your name: "
     @player_name = gets.chomp
 
-    puts "How much would you like to start from your wallet"
+    print "How much would you like to start from your wallet: $"
     starting_amount = gets.chomp.to_i
     @player = Player.new(@player_name, starting_amount)
 end
 
 def casino_menu
-  puts "Select Game"
+  puts "Select an Option:"
   puts "1) Roulette"
   puts "2) War"
   puts "3) Check wallet balance"
