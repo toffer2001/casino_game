@@ -1,9 +1,6 @@
 require_relative 'player'
 require 'artii'
-<<<<<<< HEAD
-=======
 require 'colorize'
->>>>>>> added comment
 
 class Roulette
   attr_accessor :player
@@ -12,11 +9,7 @@ class Roulette
   
   @player = player
   art = Artii::Base.new
-<<<<<<< HEAD
-  puts art.asciify('Roulette Time')
-=======
   puts art.asciify('Roulette Time').colorize(:red)
->>>>>>> added comment
   puts "Welcome #{@player.name} to Roulette - Lets Play!\n"
   user_choice
 end
@@ -116,25 +109,4 @@ end
     puts @player.printWallet
     roulette_menu
   end
-<<<<<<< HEAD
 end
-
-
-#number, parity, color
-
-# get number, 
-# get bet
-
-# bet color or parity?
-# No, spin 
-# else get color
-#   get bet
-
-# parity?
-# No spin, 
-# get parity
-# get bet
-# spin
-=======
-end
->>>>>>> added comment
