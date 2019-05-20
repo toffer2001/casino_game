@@ -1,9 +1,6 @@
 require_relative 'player'
 require 'artii'
-<<<<<<< HEAD
 require 'colorize'
-=======
->>>>>>> accepted current changes
 
 class Roulette
   attr_accessor :player
@@ -12,11 +9,7 @@ class Roulette
   
   @player = player
   art = Artii::Base.new
-<<<<<<< HEAD
   puts art.asciify('Roulette Time').colorize(:red)
-=======
-  puts art.asciify('Roulette Time')
->>>>>>> accepted current changes
   puts "Welcome #{@player.name} to Roulette - Lets Play!\n"
   user_choice
 end
