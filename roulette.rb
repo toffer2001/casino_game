@@ -30,17 +30,39 @@ end
       case @choice
       when 1
         bet_num
+<<<<<<< HEAD
         if @num_choice == @num ? winning_bet : losing_bet
         end
 
       when 2
         red_black
         if @color_choice == @color ? winning_bet : losing_bet
+=======
+        if @num_choice == @num
+          winning_bet
+        else
+          losing_bet
+        end
+      
+      when 2
+        red_black
+        if @color_choice == @color
+          winning_bet
+        else 
+          losing_bet
+>>>>>>> new method
         end
       
       when 3
         bet_parity
+<<<<<<< HEAD
         if @parity_choice == @parity ? winning_bet : losing_bet
+=======
+        if @parity_choice == @parity
+          winning_bet
+        else
+          losing_bet
+>>>>>>> new method
         end
       
       when 4

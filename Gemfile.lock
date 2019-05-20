@@ -9,6 +9,10 @@ GEM
       method_source (~> 0.9.0)
 
 PLATFORMS
+<<<<<<< HEAD
+=======
+  ruby
+>>>>>>> new method
   x64-mingw32
 
 DEPENDENCIES
